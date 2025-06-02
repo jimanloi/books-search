@@ -1,37 +1,57 @@
 .books-container {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
+  align-items: center;
 }
 
 .book-container {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  gap: 10px;
   width: 280px;
   height: 400px;
   background-color: rgba(149, 149, 149, 0.589);
   border-radius: 20px;
   justify-content: center;
+  gap: 10px;
   align-items: center;
   padding: 10px;
   box-shadow: 5px 5px 10px rgba(132, 132, 132, 0.663);
 }
 
 .book-cover {
-  width: 80%;
+  width: 90%;
   height: 70%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .book-container p {
-  width: 200px;
+  width: 100%;
   text-align: left;
-  overflow: inherit;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-title {
+  width: 95%;
+  max-height: 20%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-description {
+  width: 250px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
 }
