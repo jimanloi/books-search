@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const querySlice = createSlice({
   name: "query",
-  initialState: { searchTerm: "" },
+  initialState: { searchTerm: "c" },
   reducers: {
     setQuery: (state, action) => {
       state.searchTerm = action.payload;

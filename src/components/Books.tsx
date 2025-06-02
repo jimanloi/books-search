@@ -11,22 +11,21 @@ const Books = () => {
   const query = useSelector((state: RootState) => state.query.searchTerm);
   const { data, isLoading } = useGetBooksQuery({ query });
 
-  if (isLoading)
-    return (
-      <Box sx={{ display: "flex" }}>
-        <CircularProgress />
-      </Box>
-    );
-
   // if (error) return <p>Error fetching books</p>;
 
   console.log(data);
 
   return (
     <div className="books-container">
-      {data?.docs?.length
-        ? data.docs.map((book: Book) => <BookCard key={book.key} book={book} />)
-        : "No books found"}
+      {isLoading ? (
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
+      ) : data?.docs?.length ? (
+        data.docs.map((book: Book) => <BookCard key={book.key} book={book} />)
+      ) : (
+        "No books found"
+      )}
     </div>
   );
 };
